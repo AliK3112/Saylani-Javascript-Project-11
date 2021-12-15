@@ -15,14 +15,18 @@ about.addEventListener("click", (e) => {
     // Removing active status from all buttons
     btns.forEach(removeActive);
     // Setting one button to active
-    e.target.classList.add("active");
+    addActive(e.target);
   }
   // hide other articles
   articles.forEach(removeActive);
-  const element = document.getElementById(id);
-  element.classList.add("active");
+  // Activating target article
+  addActive(document.getElementById(id));
 });
 
-function removeActive(button) {
-  button.classList.remove("active");
+function removeActive(element) {
+  element.classList.remove("active");
+}
+
+function addActive(element) {
+  element.classList.add("active");
 }
